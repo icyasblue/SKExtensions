@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D9E6ACA1C8176AA0067C701 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E6AC71C8176AA0067C701 /* Dictionary.swift */; };
+		6D9E6ACB1C8176AA0067C701 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E6AC81C8176AA0067C701 /* UIViewController.swift */; };
+		6D9E6ACC1C8176AA0067C701 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E6AC91C8176AA0067C701 /* UIImage.swift */; };
 		6DD0D5F21C1C012700184646 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0D5F11C1C012700184646 /* Array.swift */; };
 		6DD0D5F41C1C01B400184646 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0D5F31C1C01B400184646 /* String.swift */; };
 		6DD0D5F61C1C025A00184646 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0D5F51C1C025A00184646 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D9E6AC71C8176AA0067C701 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		6D9E6AC81C8176AA0067C701 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6D9E6AC91C8176AA0067C701 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		6DD0D5DC1C1C00BB00184646 /* SKExtensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKExtensions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD0D5EB1C1C00BB00184646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DD0D5F11C1C012700184646 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 				6DD0D5F11C1C012700184646 /* Array.swift */,
 				6DD0D5F31C1C01B400184646 /* String.swift */,
 				6DD0D5F51C1C025A00184646 /* UIColor.swift */,
+				6D9E6AC71C8176AA0067C701 /* Dictionary.swift */,
+				6D9E6AC81C8176AA0067C701 /* UIViewController.swift */,
+				6D9E6AC91C8176AA0067C701 /* UIImage.swift */,
 			);
 			path = SKExtensions;
 			sourceTree = "<group>";
@@ -127,8 +136,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DD0D5F41C1C01B400184646 /* String.swift in Sources */,
+				6D9E6ACA1C8176AA0067C701 /* Dictionary.swift in Sources */,
 				6DD0D5F61C1C025A00184646 /* UIColor.swift in Sources */,
+				6D9E6ACC1C8176AA0067C701 /* UIImage.swift in Sources */,
 				6DD0D5F21C1C012700184646 /* Array.swift in Sources */,
+				6D9E6ACB1C8176AA0067C701 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +272,7 @@
 				6DD0D5F01C1C00BB00184646 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
