@@ -30,7 +30,7 @@ extension UIColor {
         let str = removePound(rgbaString)
         let length = str.characters.count
         if length % 4 == 0 {
-            if let rgba = hex2CGFloatArray(str, by: length / 3) {
+            if let rgba = hex2CGFloatArray(str, by: length / 4) {
                 self.init(red: rgba[0], green: rgba[1], blue: rgba[2], alpha:rgba[3])
                 return
             }
@@ -53,8 +53,10 @@ private func hex2CGFloatArray(hexString:String, by:Int) -> [CGFloat]? {
         let step = by * 4
         var resultArray = [CGFloat]()
         var mask = Int(pow(16, Double(by)) - 1)
-        for var i = 1; i <= num; i <<= step {
+        var i = 1
+        while i <= num {
             resultArray.insert(CGFloat(num & mask) / CGFloat(mask), atIndex: 0)
+            i <<= step
             mask <<= step
         }
         return resultArray

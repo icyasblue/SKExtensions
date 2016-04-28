@@ -43,8 +43,10 @@ extension Array {
     func sk_split(length:Int) -> [[Element]]? {
         if 0 == count % length {
             var result = [[Element]]()
-            for var i = 0; i < count; i += length {
+            var i = 0
+            while i < count {
                 result.append(Array(self[i...(i + length - 1)]))
+                i += length
             }
             return result
         }
