@@ -21,7 +21,7 @@ extension UIColor {
                 return
             }
         }
-        self.init(CGColor: UIColor.clearColor().CGColor)
+        self.init(cgColor: UIColor.clear.cgColor)
     }
 
     // init with "[#]RGBA", "[#]RRGGBBAA", "[#]RRRGGGBBBAAA"...
@@ -35,27 +35,27 @@ extension UIColor {
                 return
             }
         }
-        self.init(CGColor: UIColor.clearColor().CGColor)
+        self.init(cgColor: UIColor.clear.cgColor)
     }
 }
 
 // MARK: - private functions
 
-private func removePound(s:String) -> String {
+private func removePound(_ s:String) -> String {
     if s.hasPrefix("#") {
-        return s.substringFromIndex(s.startIndex.advancedBy(1))
+        return s.substring(from: s.characters.index(s.startIndex, offsetBy: 1))
     }
     return s
 }
 
-private func hex2CGFloatArray(hexString:String, by:Int) -> [CGFloat]? {
+private func hex2CGFloatArray(_ hexString:String, by:Int) -> [CGFloat]? {
     if let num = Int(hexString, radix: 16) {
         let step = by * 4
         var resultArray = [CGFloat]()
         var mask = Int(pow(16, Double(by)) - 1)
         var i = 1
         while i <= num {
-            resultArray.insert(CGFloat(num & mask) / CGFloat(mask), atIndex: 0)
+            resultArray.insert(CGFloat(num & mask) / CGFloat(mask), at: 0)
             i <<= step
             mask <<= step
         }

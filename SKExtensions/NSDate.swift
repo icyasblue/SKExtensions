@@ -8,30 +8,30 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
 
-    func shiftByMonths(months:Int) -> NSDate? {
-        return NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: months, toDate: self, options: NSCalendarOptions.MatchFirst)
+    func shiftByMonths(_ months:Int) -> Date? {
+        return (Calendar.current as NSCalendar).date(byAdding: .month, value: months, to: self, options: NSCalendar.Options.matchFirst)
     }
 
-    func shiftByDays(days:Int) -> NSDate? {
-        return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: days, toDate: self, options: NSCalendarOptions.MatchFirst)
+    func shiftByDays(_ days:Int) -> Date? {
+        return (Calendar.current as NSCalendar).date(byAdding: .day, value: days, to: self, options: NSCalendar.Options.matchFirst)
     }
 
-    func shiftByHours(hours:Int) -> NSDate? {
-        return NSCalendar.currentCalendar().dateByAddingUnit(.Hour, value: hours, toDate: self, options: NSCalendarOptions.MatchFirst)
+    func shiftByHours(_ hours:Int) -> Date? {
+        return (Calendar.current as NSCalendar).date(byAdding: .hour, value: hours, to: self, options: NSCalendar.Options.matchFirst)
     }
 
     // comparison C style
-    @warn_unused_result
-    func sk_compare(another: NSDate) -> Int {
+
+    func sk_compare(_ another: Date) -> Int {
         let res = self.compare(another)
         switch res {
-        case .OrderedSame:
+        case .orderedSame:
             return 0
-        case .OrderedAscending:
+        case .orderedAscending:
             return -1
-        case .OrderedDescending:
+        case .orderedDescending:
             return 1
         }
     }

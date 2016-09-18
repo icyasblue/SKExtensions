@@ -10,11 +10,11 @@ import Foundation
 
 extension Array {
     // javascript-like filter function
-    @warn_unused_result
-    func sk_filter(fn: (item:Element, idx:Int, arr:[Element]) throws -> Bool) rethrows -> [Element] {
+
+    func sk_filter(fn: (_ item:Element, _ idx:Int, _ arr:[Element]) throws -> Bool) rethrows -> [Element] {
         var returnArray = [Element]()
-        for (i, x) in self.enumerate() {
-            if try fn(item:x, idx: i, arr: self) {
+        for (i, x) in self.enumerated() {
+            if try fn(x, i, self) {
                 returnArray.append(x)
             }
         }
@@ -22,11 +22,11 @@ extension Array {
     }
 
     // javascript-like map function
-    @warn_unused_result
-    func sk_map<T>(fn: (item:Element, idx:Int, arr:[Element]) throws -> T) rethrows -> [T] {
+
+    func sk_map<T>(fn: (_ item:Element, _ idx:Int, _ arr:[Element]) throws -> T) rethrows -> [T] {
         var returnArray = [T]()
-        for (i, x) in self.enumerate() {
-            returnArray.append(try fn(item:x, idx: i, arr: self))
+        for (i, x) in self.enumerated() {
+            returnArray.append(try fn(x, i, self))
         }
         return returnArray
     }
@@ -40,7 +40,7 @@ extension Array {
     }
 
     // split array into array of fixed length arrays, nil if can't equally divide
-    func sk_split(length:Int) -> [[Element]]? {
+    func sk_split(_ length:Int) -> [[Element]]? {
         if 0 == count % length {
             var result = [[Element]]()
             var i = 0
@@ -54,7 +54,7 @@ extension Array {
     }
 
     // extending join to all types with their string representation
-    func sk_join(separator:String) -> String {
-        return self.map({ String($0) }).joinWithSeparator(separator)
+    func sk_join(_ separator:String) -> String {
+        return self.map({ String(describing: $0) }).joined(separator: separator)
     }
 }
